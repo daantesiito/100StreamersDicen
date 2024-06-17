@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>100 Streamers Said</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game">
+    <h1>100 Streamers Said - Twitch Edition</h1>
+    <div id="questions-container"></div>
+    <div class="controls">
+      <button id="start-button">Start Game</button>
+      <button id="x-button" class="reveal-button" style="background-color: red;">X</button>
+      <button id="next-button">SIGUIENTE</button>
+    </div>
+    <div id="participants">
+      <div class="participant" id="participant-red">Participant1: 0</div>
+      <div class="participant" id="participant-yellow">Participant2: 0</div>
+      <div class="participant" id="participant-green">Participant3: 0</div>
+      <div class="participant" id="participant-blue">Participant4: 0</div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
