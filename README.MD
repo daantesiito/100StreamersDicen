@@ -56,12 +56,12 @@ Para conectar el bot de Twitch a tu juego, necesitas obtener un OAuth token. Sig
 
 1. Abre el archivo de configuración del bot de Twitch en tu proyecto (`app.js`).
 
-2. Reemplaza "bot-twitch-name" con el nombre de usuario de cuenta.
+2. Reemplaza "your-twitch-username" con el nombre de usuario de cuenta.
 
-3. Reemplaza `'oauth:TU_ACCESS_TOKEN'` con el token que obtuviste en el paso anterior.
+3. Reemplaza `'oauth:your-auth-token'` con el token que obtuviste en el paso anterior.
 
     ```javascript
-    const twitchUserName = "bot-twitch-name"; // Nombre de usuario de Twitch
+    const twitchUserName = "your-twitch-username"; //  <-- CHANGE / Twitch Username
     const twitchClient = new tmi.Client({
       options: { debug: true },
       connection: {
@@ -70,9 +70,9 @@ Para conectar el bot de Twitch a tu juego, necesitas obtener un OAuth token. Sig
       },
       identity: {
         username: twitchUserName,
-        password: 'oauth:TU_ACCESS_TOKEN' // Reemplaza con tu token de acceso
+        password: 'oauth:your-auth-token' //  <-- CHANGE / Twitch Token Authentication
       },
-      channels: ['twitch-channel-to-connect'] // Canal al que se conectará el bot
+      channels: ['twitch-channel-to-connect'] //  <-- CHANGE / Twitch Channel that the bot will connect
     });
 
     twitchClient.connect();
@@ -83,4 +83,11 @@ Para conectar el bot de Twitch a tu juego, necesitas obtener un OAuth token. Sig
 Para iniciar el juego, ejecuta:
 
 ```sh
-npm start
+npm install
+```
+
+And then to start the game on http://localhost:3000 run this:
+
+```sh
+node src/app.js
+```
