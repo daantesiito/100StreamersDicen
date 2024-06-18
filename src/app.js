@@ -20,7 +20,7 @@ const twitchClient = new tmi.Client({
   },
   identity: {
     username: twitchUserName,
-    password: 'oauth:pd9x7o77sca6oa9mpsdhtc7pxy8kyo' // Token de autenticación de Twitch
+    password: 'oauth:your-auth-token' // Token de autenticación de Twitch
   },
   channels: ['twitch-channel-to-connect'] // Canal al que se conectará el bot
 });
