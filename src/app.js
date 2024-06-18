@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 
-const twitchUserName = "bot-twitch-name"; // Nombre de usuario de Twitch
+const twitchUserName = "your-twitch-username"; // Nombre de usuario de Twitch
 const twitchClient = new tmi.Client({
   options: { debug: true },
   connection: {
@@ -20,9 +20,9 @@ const twitchClient = new tmi.Client({
   },
   identity: {
     username: twitchUserName,
-    password: 'oauth:pd9x7o77sca6oa9mpsdhtc7pxy8kyo' // Token de autenticación de Twitch
+    password: 'oauth:your-auth-token' // Token de autenticación de Twitch
   },
-  channels: ['twitch-channel-to-connect'] // Canal al que se conectará el bot
+  channels: ['channel-to-connect'] // Canal al que se conectará el bot
 });
 
 twitchClient.connect();
