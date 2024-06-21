@@ -154,8 +154,8 @@ button:hover {
 
 .red-x {
   position: absolute;
-  top: 62.2%;
-  left: 27.5%;
+  top: 58.2%;
+  left: 28.5%;
   transform: translate(-50%, -50%);
   font-size: 16em;
   color: red;
