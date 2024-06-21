@@ -6,6 +6,12 @@ let currentQuestionIndex = 0;
 const questions = [
   "¿Cuáles son las partes más conocidas de un barco?",
   "¿Cuál es tu comida favorita?",
+  "¿Cuál es tu comida?",
+  "¿Cuál es tu comida favoritdfsfsdfsfa?",
+  "¿Cuásdfl esdfsdfs tu csdfsdfmida favorisdfsdta?",
+  "¿Cuál es tu sdfsdcomida favorita?",
+  "¿Cuál es tu comida sdfdsfsdfavorita?",
+  "¿Cuál dssssssssssssssssssssssss tu comida favoriata?",
   // Add more questions here
 ];
 
@@ -50,10 +56,10 @@ const createQuestionElement = (question, index) => {
     const buttonsDiv = document.createElement('div');
     buttonsDiv.classList.add('buttons');
     const buttonTexts = {
-      red: 'Participant1',
-      yellow: 'Participant2',
-      green: 'Participant3',
-      blue: 'Participant4'
+      red: 'Aldu',
+      yellow: 'Flor',
+      green: 'Joaco',
+      blue: 'Baulo'
     };
     ['red', 'yellow', 'green', 'blue'].forEach(color => {
       const button = document.createElement('button');

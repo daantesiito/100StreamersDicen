@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 
-const twitchUserName = "your-twitch-username"; //  <-- CHANGE / Twitch Username
+const twitchUserName = "daantesiito"; // Nombre de usuario de Twitch
 const twitchClient = new tmi.Client({
   options: { debug: true },
   connection: {
@@ -20,9 +20,9 @@ const twitchClient = new tmi.Client({
   },
   identity: {
     username: twitchUserName,
-    password: 'oauth:your-auth-token' //  <-- CHANGE / Twitch Token Authentication
+    password: 'oauth:pd9x7o77sca6oa9mpsdhtc7pxy8kyo' // Token de autenticación de Twitch
   },
-  channels: ['twitch-channel-to-connect'] //  <-- CHANGE / Twitch Channel that the bot will connect
+  channels: [twitchUserName] // Canal al que se conectará el bot
 });
 
 twitchClient.connect();
@@ -38,7 +38,7 @@ const startCountdownTimer = () => {
     countdown++;
 
     if (countdown === 15) {
-      twitchClient.say(twitchUserName, '15 seconds remaining!!' ); // Send message to twitch chat.
+      twitchClient.say(twitchUserName, '15 segundos restantes!!' ); // Send message to twitch chat.
     }
   }, 1000); 
 };
@@ -61,13 +61,13 @@ io.on('connection', (socket) => {
   socket.on('startGame', ({ questionIndex }) => {
     answersCount = {};
     activeQuestionIndex = questionIndex;
-    console.log('Game started to Question number:', questionIndex + 1);
+    console.log('Recolectando respuestas de pregunta:', questionIndex + 1);
 
     // Start 15 seconds timer.
     startCountdownTimer();
 
     // Send message to twitch chat.
-    twitchClient.say(twitchUserName, 'Gathering responses! You have 30 seconds to type your answer in the chat, and the 6 most repeated ones will be assigned!');
+    twitchClient.say(twitchUserName, 'Recolectando respuestas! Las 6 mas repetidas se asignaran a la pregunta.');
   });
 
   socket.on('endGame', ({ questionIndex }) => {
@@ -89,10 +89,10 @@ io.on('connection', (socket) => {
 
       io.emit('showAnswers', { answers: sortedAnswers, questionIndex });
       activeQuestionIndex = -1;
-      console.log('Game ended to Question number:', questionIndex + 1, sortedAnswers);
+      console.log('Respuestas recolectadas para la pregunta:', questionIndex + 1, sortedAnswers);
 
       // Send message to twitch chat.
-      twitchClient.say(twitchUserName, 'Answers asigned. Stop spamming!!');
+      twitchClient.say(twitchUserName, 'Respuestas recolectadas!!');
     }
   });
 
