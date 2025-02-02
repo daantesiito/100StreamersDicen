@@ -19,10 +19,10 @@ const twitchClient = new tmi.Client({
     secure: true
   },
   identity: {
-    username: twitchUserName,
-    password: 'oauth:pd9x7o77sca6oa9mpsdhtc7pxy8kyo' // Token de autenticación de Twitch
+    username: twitchUserName, // Aca se puede poner el nombre de la cuenta q se va a usar como bot, yo puse la misma mia por comodidad.
+    password: 'oauth:lzd2gbye77zwdogo046l00zvnx0v7d' // Token de autenticación de Twitch
   },
-  channels: [twitchUserName] // Canal al que se conectará el bot
+  channels: [twitchUserName] // Canal al que se va a conectar el bot
 });
 
 twitchClient.connect();

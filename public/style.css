@@ -15,10 +15,9 @@ body {
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  max-width: 80%;
-  margin: 20px;
-  height: 870px;
-  min-width: 800px; /* Ajusta este valor según sea necesario */
+  width: 800px; /* Ancho fijo */
+  margin: 20px auto; /* Centra el contenedor horizontalmente */
+  height: 890px;
   overflow: hidden;
   position: relative;
 }
